@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="log4net" Version="2.0.15" />
+    <PackageReference Include="WindowsAPICodePack" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SensorModules_CS-master\Jai_PleoraEbusLibrary\Jai_PleoraEbusLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PvDotNet">
+      <HintPath>..\..\..\..\Program Files\Common Files\Pleora\eBUS SDK\PvDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PvGUIDotNet">
+      <HintPath>..\..\..\..\Program Files\Common Files\Pleora\eBUS SDK\PvGUIDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
